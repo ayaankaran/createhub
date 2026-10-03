@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,37 +14,116 @@
             <h1>CreateHub</h1>
 
             <nav>
-                <button>🏠 Home</button>
-                <button>🔎 Discover</button>
-                <button>➕ Create</button>
-                <button>🔔 Notifications</button>
-                <button>👤 Profile</button>
+                <button onclick="showPage('home')">🏠 Home</button>
+                <button onclick="showPage('discover')">🔎 Discover</button>
+                <button onclick="showPage('create')">➕ Create</button>
+                <button onclick="showPage('notifications')">🔔 Notifications</button>
+                <button onclick="showPage('profile')">👤 Profile</button>
             </nav>
         </div>
     </header>
 
     <main>
 
-        <section class="create-box">
-            <textarea id="postInput" placeholder="What's on your mind?"></textarea>
-            <button onclick="createPost()">Post</button>
+        <!-- HOME -->
+        <section id="home" class="page">
+
+            <section class="create-box">
+                <textarea id="postInput" placeholder="What's on your mind?"></textarea>
+                <button onclick="createPost()">Post</button>
+            </section>
+
+            <section id="feed">
+
+                <article class="post">
+                    <h3>@CreateHub</h3>
+                    <p>Welcome to CreateHub! 🚀</p>
+
+                    <button onclick="likePost(this)">
+                        ❤️ <span>0</span>
+                    </button>
+                </article>
+
+            </section>
+
         </section>
 
-        <section id="feed">
+
+        <!-- DISCOVER -->
+        <section id="discover" class="page" style="display: none;">
+
+            <h2>🔎 Discover</h2>
 
             <article class="post">
-                <h3>@CreateHub</h3>
-                <p>Welcome to CreateHub! 🚀</p>
-
-                <button onclick="likePost(this)">
-                    ❤️ <span>0</span>
-                </button>
+                <h3>🔥 Trending</h3>
+                <p>See what people are creating on CreateHub.</p>
             </article>
+
+            <article class="post">
+                <h3>🏏 Cricket</h3>
+                <p>Discover cricket posts and discussions.</p>
+            </article>
+
+            <article class="post">
+                <h3>🧠 Maths</h3>
+                <p>Find interesting maths challenges.</p>
+            </article>
+
+        </section>
+
+
+        <!-- CREATE -->
+        <section id="create" class="page" style="display: none;">
+
+            <h2>➕ Create a post</h2>
+
+            <section class="create-box">
+
+                <textarea
+                    id="createInput"
+                    placeholder="What do you want to share?"
+                ></textarea>
+
+                <button onclick="createFromPage()">Publish</button>
+
+            </section>
+
+        </section>
+
+
+        <!-- NOTIFICATIONS -->
+        <section id="notifications" class="page" style="display: none;">
+
+            <h2>🔔 Notifications</h2>
+
+            <article class="post">
+                <p>You're all caught up! 🎉</p>
+            </article>
+
+        </section>
+
+
+        <!-- PROFILE -->
+        <section id="profile" class="page" style="display: none;">
+
+            <article class="post">
+
+                <h2>👤 @You</h2>
+
+                <p>Your CreateHub profile</p>
+
+                <p>
+                    Posts: <strong id="postCount">0</strong>
+                </p>
+
+            </article>
+
+            <h2>Your posts</h2>
+
+            <section id="myPosts"></section>
 
         </section>
 
     </main>
 
-    <script src="script.js"></script>
-</body>
-</html>
+    <script src="script
